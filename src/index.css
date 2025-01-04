@@ -1,0 +1,36 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes tableIn {
+      from { transform: translateY(10px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .animate-table-in {
+      animation: tableIn 0.3s ease-in-out;
+    }
+
+    @keyframes rowIn {
+      from { transform: translateX(-10px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .animate-row-in {
+      animation: rowIn 0.2s ease-in-out;
+      animation-delay: calc(var(--delay) * 0.1s); /* Stagger animation */
+    }
+
+    .animate-row-in:nth-child(n){
+      --delay: counter(n);
+    }
